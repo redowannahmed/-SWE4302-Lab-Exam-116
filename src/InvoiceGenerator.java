@@ -15,8 +15,8 @@ public class InvoiceGenerator {
     public void generateInvoice(Order order, String filePath) throws IOException {
         
 
-        // implementation, couldn't think of it because of time crunch
-        
+        // couldn't think of implementation because of time crunch
+
         List<String> lines = new ArrayList<>();
 
         double subtotal = costCalculator.calculateSubtotal(order.getItems());
