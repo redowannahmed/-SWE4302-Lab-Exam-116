@@ -1,0 +1,70 @@
+1. [Line 3] Mysterious Name
+Reason: The name globalInventoryData 
+2. [Lines 5–10] Large Class
+Reason: The class mixes data storage and utility operations, violating the Single
+Responsibility Principle.
+
+Inventory Management System Class
+[Line 3] Mysterious Name
+Reason: The name inventoryManagementSystem is not descriptive enough.
+[Lines 12–20] Feature Envy
+Reason: The main method directly accesses globalInventoryData 's static elds to
+populate initial data.
+
+Inventory System Class
+[Lines 20–85] Large Class
+Reason: The class handles product management, order processing, and sales
+reporting, violating the Single Responsibility Principle.
+
+[Lines 32–84] Long Function
+Reason: The addProduct method combines validation, data initialization, and data
+storage into one method.
+
+[Lines 44–62] Long Parameter List
+Reason: The addProduct method takes multiple parameters like name , price ,
+category , and more. These should be encapsulated into a ProductDetails or
+Product class.
+
+[Lines 94–131] Long Function
+Reason: The processOrder method handles stock validation, order creation, and
+updating totals in one place.
+
+[Lines 125–131] Shotgun Surgery
+Reason: Changes to the Order structure require updates in multiple parts of the
+codebase, like processOrder and globalInventoryData.
+
+[Lines 140–149] Duplication
+Reason: Both GenerateInventoryReport and GenerateSalesReport follow a similar
+structure but handle dierent data, which could be refactored into a common
+reporting framework.
+
+[Lines 20–131] Feature Envy
+Reason: The inventorySystem class relies heavily on globalInventoryData for
+static eld access, indicating that the behavior may be misplaced.
+
+[Lines 32–62] Conditional Complexity
+Reason: The addProduct method uses nested if statements for validation, which
+can be simplied using the Guard Clause pattern.
+
+[Lines 125–131] Message Chain
+Reason: In processOrder , the Order object accesses its items , and each item
+accesses productId , quantity , and price.
+
+Warehouse Class
+[Line 10] Lazy Class
+Reason: The Warehouse class is essentially a data container without meaningful
+behavior.
+
+Order Class
+[Lines 77–85] Large Class
+Reason: The Order inner class contains another inner class, OrderItem , along with
+multiple unrelated responsibilities. 
+
+[Throughout] Inconsistent Naming
+Reason: Variables like currentProductId and currentOrderId follow a dierent
+naming convention compared to others like globalInventoryData .
+
+[Lines 94–131] Switch Statements
+Reason: The calculateFinalPrice method has a switch-case structure that could
+be refactored using polymorphism, improving maintainability.
+
