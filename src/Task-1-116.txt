@@ -1,6 +1,6 @@
-1. [Line 3] Mysterious Name
+[Line 3] Mysterious Name
 Reason: The name globalInventoryData 
-2. [Lines 5–10] Large Class
+[Lines 5–10] Large Class
 Reason: The class mixes data storage and utility operations, violating the Single
 Responsibility Principle.
 
